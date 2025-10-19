@@ -1,0 +1,408 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #e2e2e2, rgb(230, 204, 230));
+}
+
+.container {
+    position: relative;
+    width: 850px;
+    height: 700px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.form-box {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-right: 40px;
+    padding-left: 20px;
+    z-index: 1;
+}
+
+form {
+    width: 100%;
+}
+
+.heaging {
+    font-size: 36px;
+    margin: -10px 0;
+    margin-top: 40px;
+}
+
+.input-group {
+    position: relative;
+    margin: 30px 0;
+}
+.input-group input {
+    width: 80%;
+    padding: 13px 50px 13px 20px;
+    background-color: #eee;
+    border-radius: 8px;
+    border: 1px solid #703b55;
+    outline: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: #703b55;
+}
+
+.input-group input::placeholder {
+    color: #888;
+    font-weight: 400;
+}
+
+.input-group i {
+    position: absolute;
+    right: 20px;
+    top: 13px;
+    transform: none;
+    font-size: 20px;
+}
+
+.input-wrap { position: relative; width: 80%; }
+.input-wrap input { width: 100%; }
+.input-wrap i { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 20px; }
+
+
+.Btn {
+    width: 70%;
+    height: 48%;
+    padding: 10px;
+    background-color: #703b55;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.container p {
+    font-size: 15px;
+    margin: 15px 0;
+}
+
+.sociamedia-icons a {
+    display: inline-flex;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: white;
+    font-size: 24px;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+/* left UI */
+
+.toogle-box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.toggle-panel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+}
+
+
+.toggle-panel h1 {
+    z-index: 3;
+    text-align: center;
+}
+
+.toggle-panel::before {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 100%;
+    background-color: #703b55;
+    border-top-right-radius: 200px;
+    border-bottom-right-radius: 200px;
+    left: -920px;
+    color: #eee
+}
+
+.input-group .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+
+.input-group.success input {
+    border: #703b55;
+}
+
+.input-group.error input {
+    border-color: red;
+}
+
+/* success message */ 
+
+/* ✅ Success Popup (Desktop + Mobile Friendly) */
+#successPopup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+
+.popup-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px 30px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeInScale 0.3s ease;
+  width: 90%;
+  max-width: 350px;
+}
+
+.popup-content p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2e7d32;
+  margin-bottom: 15px;
+}
+
+.popup-content button {
+  background: #2e7d32;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.popup-content button:hover {
+  background: #1b5e20;
+}
+
+/* ✅ Animation */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ✅ Mobile Adjustments */
+@media (max-width: 480px) {
+  .popup-content {
+    width: 80%;
+    padding: 20px;
+  }
+
+  .popup-content p {
+    font-size: 1rem;
+  }
+
+  .popup-content button {
+    padding: 8px 18px;
+  }
+}
+
+
+/*  Responsive for mobile — keep left panel visible */
+@media (max-width: 768px) {
+
+    body {
+        flex-direction: column;
+        background: linear-gradient(180deg, #e2e2e2, rgb(230, 204, 230));
+    }
+
+    .container {
+        flex-direction: row;
+        display: flex;
+        width: 95%;
+        height: auto;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+    .container h1 {
+        margin-top: 20px;
+    }
+
+    /* Left side toggle box stays visible */
+    .toogle-box {
+        position: relative;
+        width: 40%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #703b55;
+        color: white;
+        padding: 20px;
+        border-radius: 200px 0 0 200px;
+    }
+
+    .toggle-panel {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: none;
+        border-radius: 0;
+        text-align: center;
+    }
+
+    .toggle-panel::before {
+        display: none; /* removes the big curved purple shape */
+    }
+
+    .toggle-panel h1 {
+        font-size: 16px;
+        line-height: 1.4;
+        margin: 1px 0; /* adds vertical (y-axis) space above and below */
+    }
+
+    /* Right side form area */
+    .form-box {
+        position: relative;
+        width: 60%;
+        padding: 20px;
+        text-align: center;
+        background-color: white;
+        box-shadow: none;
+        border-radius: 0 200px 200px 0;
+    }
+
+    .container h1 {
+        font-size: 26px;
+    }
+
+    .input-group {
+        margin: 20px 0;
+    }
+
+    .input-group input {
+        width: 80%;
+        padding: 10px 40px 10px 15px;
+        font-size: 14px;
+    }
+
+    .input-group i {
+        font-size: 18px;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .Btn {
+        width: 100%;
+        height: 45px;
+        font-size: 15px;
+        margin-top: 10px;
+    }
+
+    .sociamedia-icons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .sociamedia-icons a {
+        margin: 5px;
+        font-size: 18px;
+        padding: 6px;
+    }
+
+    .input-group {
+        position: relative;
+        margin: 30px 0;
+        min-height: 20px; /* ✅ ensures enough space for error message */
+    }
+
+    .input-group i {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        pointer-events: none; /* ✅ prevent click interference */
+        transition: 0.2s ease; /* smooth look */
+    }
+
+    .input-group .error {
+        color: red;
+        font-size: 13px;
+        position: absolute;
+        bottom: -18px; /* ✅ places error below input so it doesn’t push layout */
+        left: 5px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .input-group input {
+        margin-right: 100px;
+    }
+
+    .toogle-box {
+        position: relative;
+        width: 40%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #703b55;
+        color: white;
+        padding: 20px;
+        border-radius: 250px 0 0 250px;
+        margin-left: 10px;
+    }
+
+    .toogle-box h1 {
+        font-size: 18px;
+    }
+
+
+    .input-group {
+        position: relative;
+        margin: 30px 0;
+        min-height: 20px; /* ✅ ensures enough space for error message */
+    }
+
+    .input-group i {
+        right: -6px;
+    }
+}
